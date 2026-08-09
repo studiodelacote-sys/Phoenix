@@ -1,14 +1,30 @@
-# PHOENIX V0.453 — PWA iPhone/iPad
+# PHOENIX V0.454 — PWA iPhone/iPad
 
 PHOENIX est une Progressive Web App autonome, sans framework. La séance dure 15 minutes programmées et fonctionne hors connexion après une première ouverture réussie en ligne.
 
-La V0.453 relie le Rituel à la fiche détaillée responsive. Dans **Autres vues → Fiche détaillée**, PHOENIX met automatiquement le Rituel en pause, ouvre la Library, puis restaure exactement l’exercice, le cycle, le chrono, la phase et la répétition avec le bouton **← Retour**. L’affiche historique reste secondaire et n’apparaît qu’après avoir touché **Voir la fiche complète**. Routes directes de test :
+La V0.454 sépare les étapes de séance des mouvements pédagogiques canoniques. Les treize exercices de la Séance 01 pointent vers sept fiches Library. Dans **Autres vues → Fiche détaillée**, PHOENIX ouvre la fiche du mouvement canonique et préserve l’état du Rituel. L’affiche historique reste secondaire et n’apparaît qu’après avoir touché **Voir la fiche A4**. Routes directes de test :
 
 - `?library=squat-chair` — Squat vers chaise ;
 - `?library=one-arm-row` — Tirage à un bras ;
-- `?library=bridge` — Pont fessier.
+- `?library=glute-bridge` — Pont fessier ;
+- `?library=mini-stepper` — Mini-stepper ;
+- `?library=floor-press` — Développé couché au sol ;
+- `?library=thoracic-opening` — Ouverture thoracique ;
+- `?library=breathing` — Respiration calme.
 
 Les miniatures « Autres vues » réutilisent provisoirement les compositions `ritualImage` existantes. Les futurs assets dédiés pourront remplacer ces sources dans les données sans changer le composant.
+
+## Mouvements canoniques de la Séance 01
+
+- `mini-stepper` : exercice 1 ;
+- `squat-chair` : exercices 2 et 7 ;
+- `one-arm-row` : exercices 3, 4, 8 et 9 (`side: right/left`) ;
+- `glute-bridge` : exercices 5 et 10 ;
+- `floor-press` : exercices 6 et 11 ;
+- `thoracic-opening` : exercice 12 ;
+- `breathing` : exercice 13.
+
+Les six premiers mouvements disposent du poster A4 historique. La fiche mobile `breathing` est complète, mais son asset A4 n’existe pas encore : son bouton indique donc **Fiche A4 indisponible**.
 
 L’état de séance distingue désormais explicitement `idle`, `running`, `paused`, `completed` et `interrupted`. La commande globale est accessible par le bouton `•••` du header pendant les exercices et les transitions. Elle ne remplace pas le bouton **Interrompre**, qui continue à agir uniquement sur le timer courant.
 

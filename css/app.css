@@ -34,7 +34,7 @@ body.library-mode{min-height:100svh;min-height:100dvh;overscroll-behavior-y:auto
 
 @media(min-width:760px){.library-column{max-width:1120px}.library-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.library-visual,.library-technique,.library-views{grid-column:1/-1}.library-objective,.library-cadence,.library-avoid{height:100%}.library-actions{grid-template-columns:1fr 1fr}.library-intro{max-width:760px}}
 
-/* Library V0.453: hero pédagogique responsive, jamais recadré. */
+/* Library V0.454: fiche mobile dérivée du langage visuel A4. */
 .library-visual>.library-hero-stage{position:relative;display:block;width:100%;padding:0;background:var(--visual);color:inherit;text-align:initial}
 .library-visual .library-hero-stage img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
 .library-hero-annotations{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
@@ -46,4 +46,5 @@ body.library-mode{min-height:100svh;min-height:100dvh;overscroll-behavior-y:auto
 .library-card h2{padding-bottom:10px;border-bottom:1px solid #574725;font-family:Georgia,serif;font-weight:600}
 .library-section-icon{display:inline-grid;place-items:center;min-width:28px;color:var(--gold2);font-family:system-ui,sans-serif;font-size:.9em}
 .library-avoid::before{background:linear-gradient(transparent,var(--warning),transparent)}
+.library-sequence{grid-column:1/-1;overflow:hidden}.library-sequence ol{display:flex;gap:12px;margin:0;padding:2px 0 8px;overflow-x:auto;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}.library-sequence li{flex:0 0 min(72vw,220px);display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start;padding:14px;border:1px solid #584925;background:#191a1b;scroll-snap-align:start}.library-sequence li>span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#111;font-weight:900}.library-sequence li p{padding-top:1px}.library-volume p{color:var(--gold2);font-weight:800}.poster-button:disabled{border-color:#4b463c;background:#242526;color:#8f8b82}
 .library-card p,.library-card li{font-size:clamp(18px,4.6vw,22px)}
