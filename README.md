@@ -1,10 +1,10 @@
-# PHOENIX V0.455 — PWA iPhone/iPad
+# PHOENIX V0.456 — PWA iPhone/iPad
 
 PHOENIX est une Progressive Web App autonome, sans framework. La séance dure 15 minutes programmées et fonctionne hors connexion après une première ouverture réussie en ligne.
 
-La V0.455 introduit un prototype de fiche mobile directement dérivé des véritables affiches A4 pour **Squat vers chaise** et **Tirage un bras avec appui**. Le contenu graphique du poster est découpé en régions sémantiques puis recomposé verticalement, sans cartes génériques ni transcription manuelle. Les autres mouvements conservent la Library V0.454 comme solution de repli.
+La V0.456 reconstruit les affiches A4 maîtres de **Squat vers chaise** et **Tirage un bras avec appui** avec des zones d’illustration gris technique, des personnages plus lisibles et des cadres or continus. Le contenu graphique V2 est découpé en régions sémantiques puis recomposé verticalement, sans cartes génériques ni transcription manuelle. Les autres mouvements conservent la Library historique comme solution de repli.
 
-Dans **Autres vues → Fiche détaillée**, ces deux mouvements ouvrent automatiquement le nouveau composant et préservent l’état du Rituel. Le marqueur visible `LIBRARY A4 MOBILE · V0.455` permet de vérifier la bonne version. Le bouton **VOIR LA FICHE A4** ouvre toujours le poster original. Routes directes de test :
+Dans **Autres vues → Fiche détaillée**, ces deux mouvements ouvrent automatiquement le composant V2 et préservent l’état du Rituel. Le marqueur visible `LIBRARY A4 MOBILE · V0.456` permet de vérifier la bonne version. Le bouton **VOIR LA FICHE A4** ouvre le nouveau master V2. Routes directes de test :
 
 - `?library=squat-chair` — Squat vers chaise ;
 - `?library=one-arm-row` — Tirage à un bras ;
@@ -16,14 +16,14 @@ Dans **Autres vues → Fiche détaillée**, ces deux mouvements ouvrent automati
 
 Les miniatures « Autres vues » réutilisent provisoirement les compositions `ritualImage` existantes. Les futurs assets dédiés pourront remplacer ces sources dans les données sans changer le composant.
 
-### Prototype A4 mobile V0.455
+### Masters A4 et Library mobile V0.456
 
-Sources maîtres :
+Nouveaux masters :
 
-- `assets/images/library/squat.png` pour `squat-chair` ;
-- `assets/images/library/row.png` pour `one-arm-row`.
+- `assets/posters/v2/squat-vers-chaise-a4-v2.webp` pour `squat-chair` ;
+- `assets/posters/v2/tirage-un-bras-appui-a4-v2.webp` pour `one-arm-row`.
 
-Chaque affiche est découpée, sans recréation graphique, en sept fichiers WebP : `hero`, `objective`, `instructions`, `cadence`, `volume`, `avoid` et `sequence`. Ils se trouvent respectivement dans `assets/library-a4/squat/` et `assets/library-a4/one-arm-row/`. Le script reproductible `work/crop_a4_regions.py` contient les coordonnées exactes des découpes.
+Chaque affiche est découpée en sept fichiers WebP : `hero-grey`, `objective`, `comment-faire`, `cadence`, `volume`, `a-eviter` et `sequence`. Ils se trouvent respectivement dans `assets/library-a4/v2/squat/` et `assets/library-a4/v2/one-arm-row/`. Le script reproductible `work/crop_a4_v2_regions.py` contient les coordonnées exactes des découpes. La vue de face du squat et la vue de dos du tirage sont intégrées au héros, car elles apportent une information d’alignement ; la section séparée « Autre vue », redondante, est supprimée pour ces deux mouvements.
 
 Le composant est isolé dans `js/A4DerivedLibraryDetail.js` et `css/A4DerivedLibraryDetail.css`. Les routes `?library=squat-chair` et `?library=one-arm-row`, ainsi que les liens **Autres vues → Fiche détaillée** correspondants dans le Rituel, l’utilisent directement. Elles ne génèrent aucune ancienne `.library-card`. Les autres routes continuent à employer le composant historique.
 
