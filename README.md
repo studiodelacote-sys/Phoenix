@@ -1,8 +1,10 @@
-# PHOENIX V0.454 — PWA iPhone/iPad
+# PHOENIX V0.455 — PWA iPhone/iPad
 
 PHOENIX est une Progressive Web App autonome, sans framework. La séance dure 15 minutes programmées et fonctionne hors connexion après une première ouverture réussie en ligne.
 
-La V0.454 sépare les étapes de séance des mouvements pédagogiques canoniques. Les treize exercices de la Séance 01 pointent vers sept fiches Library. Dans **Autres vues → Fiche détaillée**, PHOENIX ouvre la fiche du mouvement canonique et préserve l’état du Rituel. L’affiche historique reste secondaire et n’apparaît qu’après avoir touché **Voir la fiche A4**. Routes directes de test :
+La V0.455 introduit un prototype de fiche mobile directement dérivé des véritables affiches A4 pour **Squat vers chaise** et **Tirage un bras avec appui**. Le contenu graphique du poster est découpé en régions sémantiques puis recomposé verticalement, sans cartes génériques ni transcription manuelle. Les autres mouvements conservent la Library V0.454 comme solution de repli.
+
+Dans **Autres vues → Fiche détaillée**, ces deux mouvements ouvrent automatiquement le nouveau composant et préservent l’état du Rituel. Le marqueur visible `LIBRARY A4 MOBILE · V0.455` permet de vérifier la bonne version. Le bouton **VOIR LA FICHE A4** ouvre toujours le poster original. Routes directes de test :
 
 - `?library=squat-chair` — Squat vers chaise ;
 - `?library=one-arm-row` — Tirage à un bras ;
@@ -13,6 +15,17 @@ La V0.454 sépare les étapes de séance des mouvements pédagogiques canoniques
 - `?library=breathing` — Respiration calme.
 
 Les miniatures « Autres vues » réutilisent provisoirement les compositions `ritualImage` existantes. Les futurs assets dédiés pourront remplacer ces sources dans les données sans changer le composant.
+
+### Prototype A4 mobile V0.455
+
+Sources maîtres :
+
+- `assets/images/library/squat.png` pour `squat-chair` ;
+- `assets/images/library/row.png` pour `one-arm-row`.
+
+Chaque affiche est découpée, sans recréation graphique, en sept fichiers WebP : `hero`, `objective`, `instructions`, `cadence`, `volume`, `avoid` et `sequence`. Ils se trouvent respectivement dans `assets/library-a4/squat/` et `assets/library-a4/one-arm-row/`. Le script reproductible `work/crop_a4_regions.py` contient les coordonnées exactes des découpes.
+
+Le composant est isolé dans `js/A4DerivedLibraryDetail.js` et `css/A4DerivedLibraryDetail.css`. Les routes `?library=squat-chair` et `?library=one-arm-row`, ainsi que les liens **Autres vues → Fiche détaillée** correspondants dans le Rituel, l’utilisent directement. Elles ne génèrent aucune ancienne `.library-card`. Les autres routes continuent à employer le composant historique.
 
 ## Mouvements canoniques de la Séance 01
 
@@ -94,7 +107,7 @@ Pour vérifier le hors-ligne, ouvrir PHOENIX une première fois en ligne, fermer
 2. Dans `service-worker.js`, changer la valeur de `CACHE_VERSION`, par exemple :
 
    ```js
-   const CACHE_VERSION = 'phoenix-v044-1';
+   const CACHE_VERSION = 'phoenix-v0456-1';
    ```
 
    Cette étape est indispensable lorsque des fichiers, illustrations ou icônes changent : l’ancien cache sera supprimé à l’activation de la nouvelle version.
