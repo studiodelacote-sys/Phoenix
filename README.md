@@ -1,4 +1,4 @@
-# PHOENIX — PWA iPhone/iPad
+# PHOENIX V0.42 — PWA iPhone/iPad
 
 PHOENIX est une Progressive Web App autonome, sans framework. La séance dure 15 minutes programmées et fonctionne hors connexion après une première ouverture réussie en ligne.
 
@@ -68,7 +68,7 @@ Pour vérifier le hors-ligne, ouvrir PHOENIX une première fois en ligne, fermer
 2. Dans `service-worker.js`, changer la valeur de `CACHE_VERSION`, par exemple :
 
    ```js
-   const CACHE_VERSION = 'phoenix-v042-1';
+   const CACHE_VERSION = 'phoenix-v043-1';
    ```
 
    Cette étape est indispensable lorsque des fichiers, illustrations ou icônes changent : l’ancien cache sera supprimé à l’activation de la nouvelle version.

@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'phoenix-v041-1';
+const CACHE_VERSION = 'phoenix-v042-1';
 const APP_SHELL = [
   './',
   './index.html',
@@ -11,6 +11,12 @@ const APP_SHELL = [
   './assets/images/row.png',
   './assets/images/press.png',
   './assets/images/roller.png',
+  './assets/images/stepper-movement-v042.png',
+  './assets/images/squat-movement-v042.png',
+  './assets/images/bridge-movement-v042.png',
+  './assets/images/row-movement-v042.png',
+  './assets/images/press-movement-v042.png',
+  './assets/images/roller-movement-v042.png',
   './icons/apple-touch-icon.png',
   './icons/icon-192.png',
   './icons/icon-512.png'
