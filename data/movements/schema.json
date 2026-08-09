@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phoenix-movement-v1",
+  "title": "PHOENIX Movement",
+  "type": "object",
+  "required": [
+    "schemaVersion", "id", "name", "category", "muscleGroups",
+    "equipment", "level", "objective", "instructions", "cadence",
+    "volume", "avoid", "sequence", "sideSupport",
+    "professionalStatus", "ritual", "assets"
+  ],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "name": {"type": "string", "minLength": 1},
+    "posterNumber": {"type": "integer", "minimum": 1},
+    "category": {"type": "string"},
+    "subtitle": {"type": "string"},
+    "muscleGroups": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "equipment": {"type": "array", "items": {"type": "string"}},
+    "level": {"type": "string"},
+    "objective": {"type": "string"},
+    "instructions": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "cadence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["duration", "action"],
+        "properties": {
+          "duration": {"type": "number", "exclusiveMinimum": 0},
+          "action": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "volume": {"type": "string"},
+    "avoid": {"type": "array", "items": {"type": "string"}},
+    "sequence": {"type": "array", "items": {"type": "string"}},
+    "sideSupport": {"enum": ["bilateral", "unilateral-right-left", "none"]},
+    "professionalStatus": {"type": "string"},
+    "ritual": {"type": "object"},
+    "assets": {
+      "type": "object",
+      "required": ["hero", "sequence", "ritualImage", "fullscreenImage", "posterFallback"],
+      "properties": {
+        "hero": {"type": "string"},
+        "sequence": {"type": "string"},
+        "alternateView": {"type": ["string", "null"]},
+        "alternateViewLabel": {"type": ["string", "null"]},
+        "heroIncludesAlternateView": {"type": "boolean"},
+        "ritualImage": {"type": "string"},
+        "fullscreenImage": {"type": "string"},
+        "posterFallback": {"type": "string"}
+      }
+    }
+  }
+}

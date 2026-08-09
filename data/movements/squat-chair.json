@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "squat-chair",
+  "name": "Squat vers chaise",
+  "posterNumber": 2,
+  "category": "Renforcement",
+  "subtitle": "Jambes, fessiers, autonomie",
+  "muscleGroups": ["Jambes", "Fessiers"],
+  "equipment": ["Chaise"],
+  "level": "Débutant",
+  "objective": "Renforcer les jambes et les fessiers en sécurité.",
+  "instructions": [
+    "Place une chaise derrière toi, pieds largeur de hanches.",
+    "Envoie les hanches vers l’arrière et plie les genoux.",
+    "Touche la chaise sans t’écraser.",
+    "Remonte en poussant dans les talons."
+  ],
+  "cadence": [
+    {"duration": 2, "action": "DESCENDRE"},
+    {"duration": 2, "action": "MONTER"}
+  ],
+  "volume": "6 à 8 répétitions",
+  "avoid": [
+    "Tomber sur la chaise",
+    "Arrondir le bas du dos",
+    "Laisser les genoux rentrer"
+  ],
+  "sequence": [
+    "Debout, prépare-toi",
+    "Descends en 2 secondes",
+    "Touche la chaise",
+    "Remonte en 2 secondes"
+  ],
+  "sideSupport": "bilateral",
+  "professionalStatus": "pilot-validated",
+  "ritual": {
+    "imageKey": "squat",
+    "title": "Squat vers chaise",
+    "cue": "Hanches vers l’arrière. Touche la chaise sans t’écraser, puis remonte en poussant dans les talons."
+  },
+  "assets": {
+    "hero": "assets/movements/squat-chair/hero.webp",
+    "sequence": "assets/movements/squat-chair/sequence.webp",
+    "alternateView": "assets/movements/squat-chair/front-view.webp",
+    "alternateViewLabel": "Vue de face — alignement des genoux",
+    "heroIncludesAlternateView": true,
+    "ritualImage": "assets/images/ritual/squat-v043.png",
+    "fullscreenImage": "assets/images/fullscreen/squat-v043.png",
+    "posterFallback": "assets/posters/v2/squat-vers-chaise-a4-v2.webp"
+  }
+}

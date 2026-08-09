@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "one-arm-row",
+  "name": "Tirage un bras avec appui",
+  "posterNumber": 4,
+  "category": "Renforcement",
+  "subtitle": "Dos, bras, posture",
+  "muscleGroups": ["Dos", "Bras", "Posture"],
+  "equipment": ["Chaise", "Haltère"],
+  "level": "Débutant",
+  "objective": "Renforcer le dos et améliorer la posture.",
+  "instructions": [
+    "Pose une main sur une chaise pour te stabiliser.",
+    "Penche le buste en gardant le dos long.",
+    "Tire l’haltère vers la hanche, coude près du corps.",
+    "Redescends lentement sans tourner le buste."
+  ],
+  "cadence": [
+    {"duration": 2, "action": "TIRER"},
+    {"duration": 2, "action": "REDESCENDRE"}
+  ],
+  "volume": "6 à 8 répétitions par bras",
+  "avoid": [
+    "Hausser l’épaule",
+    "Tordre le tronc",
+    "Donner un à-coup"
+  ],
+  "sequence": [
+    "Départ en appui",
+    "Tire en 2 secondes",
+    "Redescends en 2 secondes",
+    "Reviens au départ"
+  ],
+  "sideSupport": "unilateral-right-left",
+  "professionalStatus": "pilot-validated",
+  "ritual": {
+    "imageKey": "row",
+    "title": "Tirage",
+    "sideTitles": {
+      "right": "Tirage — bras droit",
+      "left": "Tirage — bras gauche"
+    },
+    "cues": {
+      "right": "Tire l’haltère vers la hanche, coude près du corps, sans rotation du tronc.",
+      "left": "Épaule basse, bassin stable, mouvement contrôlé, sans à-coup."
+    }
+  },
+  "assets": {
+    "hero": "assets/movements/one-arm-row/hero.webp",
+    "sequence": "assets/movements/one-arm-row/sequence.webp",
+    "alternateView": "assets/movements/one-arm-row/back-view.webp",
+    "alternateViewLabel": "Vue de dos — stabilité sans rotation",
+    "heroIncludesAlternateView": true,
+    "ritualImage": "assets/images/ritual/row-v043.png",
+    "fullscreenImage": "assets/images/fullscreen/row-v043.png",
+    "posterFallback": "assets/posters/v2/tirage-un-bras-appui-a4-v2.webp"
+  }
+}
