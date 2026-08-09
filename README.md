@@ -1,6 +1,8 @@
-# PHOENIX V0.441 — PWA iPhone/iPad
+# PHOENIX V0.442 — PWA iPhone/iPad
 
 PHOENIX est une Progressive Web App autonome, sans framework. La séance dure 15 minutes programmées et fonctionne hors connexion après une première ouverture réussie en ligne.
+
+La V0.442 ajoute une jauge continue sur chaque répétition complète, des annotations SVG légères dans le plein écran du squat, du tirage et du pont fessier, ainsi que le Screen Wake Lock lorsqu’il est disponible. En fin de séance, **Recommencer** revient au premier exercice sans le démarrer et **Quitter** revient à l’accueil en nettoyant entièrement la session.
 
 ## Lancer le projet localement sur Mac
 
