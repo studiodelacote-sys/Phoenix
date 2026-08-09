@@ -1,20 +1,23 @@
 const CACHE_PREFIX = 'phoenix-';
-const CACHE_VERSION = 'phoenix-v0458-1';
+const CACHE_VERSION = 'phoenix-v0459-1';
 const APP_SHELL = [
   './',
   './index.html',
-  './css/app.css?v=0458-1',
-  './css/A4DerivedLibraryDetail.css?v=0458-1',
-  './components/LibraryDetail.css?v=0458-1',
-  './components/PhoenixA4Poster.css?v=0458-1',
-  './js/movement-catalog.js?v=0458-1',
-  './components/RitualExercise.js?v=0458-1',
-  './components/LibraryDetail.js?v=0458-1',
-  './components/PhoenixA4Poster.js?v=0458-1',
-  './js/app.js?v=0458-1',
+  './css/app.css?v=0459-1',
+  './css/A4DerivedLibraryDetail.css?v=0459-1',
+  './components/LibraryDetail.css?v=0459-1',
+  './components/PhoenixA4Poster.css?v=0459-1',
+  './components/FullscreenExerciseMedia.css?v=0459-1',
+  './js/movement-catalog.js?v=0459-1',
+  './components/RitualExercise.js?v=0459-1',
+  './components/FullscreenExerciseMedia.js?v=0459-1',
+  './components/LibraryDetail.js?v=0459-1',
+  './components/PhoenixA4Poster.js?v=0459-1',
+  './js/app.js?v=0459-1',
   './data/movements/squat-chair.json',
   './data/movements/one-arm-row.json',
   './manifest.webmanifest',
+  './assets/brand/phoenix-brand-guideline.png',
   './assets/images/library/stepper.png',
   './assets/images/library/squat.png',
   './assets/images/library/bridge.png',
@@ -23,11 +26,11 @@ const APP_SHELL = [
   './assets/images/library/roller.png',
   './assets/posters/v2/squat-vers-chaise-a4-v2.webp',
   './assets/posters/v2/tirage-un-bras-appui-a4-v2.webp',
-  './assets/movements/squat-chair/hero.webp',
-  './assets/movements/squat-chair/sequence.webp',
+  './assets/movements/squat-chair/hero-annotated.webp',
+  './assets/movements/squat-chair/sequence-strip.webp',
   './assets/movements/squat-chair/front-view.webp',
-  './assets/movements/one-arm-row/hero.webp',
-  './assets/movements/one-arm-row/sequence.webp',
+  './assets/movements/one-arm-row/hero-annotated.webp',
+  './assets/movements/one-arm-row/sequence-strip.webp',
   './assets/movements/one-arm-row/back-view.webp',
   './assets/images/ritual/stepper-v043.png',
   './assets/images/ritual/squat-v043.png',
@@ -42,9 +45,9 @@ const APP_SHELL = [
   './assets/images/fullscreen/row-v043.png',
   './assets/images/fullscreen/press-v043.png',
   './assets/images/fullscreen/roller-v043.png',
-  './icons/apple-touch-icon.png',
-  './icons/icon-192.png',
-  './icons/icon-512.png'
+  './assets/icons/apple-touch-icon.png',
+  './assets/icons/icon-192.png',
+  './assets/icons/icon-512.png'
 ];
 
 self.addEventListener('install', event => {
