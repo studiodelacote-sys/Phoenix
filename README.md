@@ -1,4 +1,4 @@
-# PHOENIX V0.44 — PWA iPhone/iPad
+# PHOENIX V0.441 — PWA iPhone/iPad
 
 PHOENIX est une Progressive Web App autonome, sans framework. La séance dure 15 minutes programmées et fonctionne hors connexion après une première ouverture réussie en ligne.
 
