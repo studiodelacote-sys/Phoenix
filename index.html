@@ -10,11 +10,11 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="PHOENIX">
-  <title>PHOENIX — V0.451</title>
+  <title>PHOENIX — V0.452</title>
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
-  <link rel="stylesheet" href="./css/app.css?v=0451-2">
+  <link rel="stylesheet" href="./css/app.css?v=0452-2">
 </head>
 <body>
 <div class="app"><div class="top"><div class="brand">PHOENIX</div><div class="top-actions"><div id="progress" class="progress">Séance 01</div><button id="sessionMenu" class="session-menu-trigger" onclick="openSessionMenu()" aria-label="Menu de la séance" hidden>•••</button></div></div><main id="main" class="hero"></main><div id="nav" class="nav"></div><div id="hint" class="hint"></div></div>
@@ -22,6 +22,6 @@
 <div id="sessionMenuOverlay" class="session-overlay" hidden><div class="session-sheet" role="dialog" aria-modal="true" aria-label="Menu de la séance"><div class="session-sheet-title">Séance PHOENIX</div><button class="session-end-command" onclick="requestEndConfirmation()">Terminer la séance</button><button class="session-sheet-close" onclick="closeSessionMenu()">Fermer</button></div></div>
 <div id="sessionConfirm" class="session-overlay" hidden><div class="session-confirm-card" role="alertdialog" aria-modal="true" aria-labelledby="sessionConfirmTitle" aria-describedby="sessionConfirmText"><h2 id="sessionConfirmTitle">Mettre fin à la séance ?</h2><p id="sessionConfirmText">La séance en cours sera arrêtée.</p><div class="session-confirm-actions"><button class="confirm-continue" onclick="continueSession()">Continuer</button><button class="confirm-end" onclick="terminateSession()">Terminer</button></div></div></div>
 <div id="full" class="fullscreen" role="dialog" aria-modal="true" aria-label="Illustration du mouvement"><button class="close" onclick="closeFull()" aria-label="Fermer l’illustration">Fermer</button><img id="fullImg" alt="Illustration du mouvement agrandie"><svg id="fullAnnotations" class="fullscreen-annotations" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg></div>
-  <script src="./js/app.js?v=0451-2" defer></script>
+  <script src="./js/app.js?v=0452-2" defer></script>
 </body>
 </html>

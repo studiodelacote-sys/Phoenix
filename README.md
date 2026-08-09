@@ -1,10 +1,11 @@
-# PHOENIX V0.451 — PWA iPhone/iPad
+# PHOENIX V0.452 — PWA iPhone/iPad
 
 PHOENIX est une Progressive Web App autonome, sans framework. La séance dure 15 minutes programmées et fonctionne hors connexion après une première ouverture réussie en ligne.
 
-La V0.451 consolide les fiches pédagogiques responsives de la Bibliothèque et ajoute au Rituel une commande globale **Terminer la séance**, avec confirmation et écran distinct **Séance interrompue**. Routes de test :
+La V0.452 corrige le routage et le cache de la Bibliothèque. Chaque fiche affiche désormais sa grande illustration pédagogique responsive, puis ses sections HTML dans une page à défilement vertical. L’affiche historique n’apparaît qu’après avoir touché **Voir la fiche complète**. Routes de test :
 
 - `?library=squat-chair` — Squat vers chaise ;
+- `?library=one-arm-row` — Tirage à un bras ;
 - `?library=bridge` — Pont fessier.
 
 Les miniatures « Autres vues » réutilisent provisoirement les compositions `ritualImage` existantes. Les futurs assets dédiés pourront remplacer ces sources dans les données sans changer le composant.
