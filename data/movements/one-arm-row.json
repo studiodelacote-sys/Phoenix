@@ -1,9 +1,12 @@
 {
   "schemaVersion": 1,
   "id": "one-arm-row",
+  "slug": "tirage-un-bras-appui",
   "name": "Tirage un bras avec appui",
+  "shortName": "Tirage un bras",
   "posterNumber": 4,
   "category": "Renforcement",
+  "subCategory": "Dos, bras et posture",
   "subtitle": "Dos, bras, posture",
   "muscleGroups": ["Dos", "Bras", "Posture"],
   "equipment": ["Chaise", "Haltère"],
@@ -20,19 +23,22 @@
     {"duration": 2, "action": "REDESCENDRE"}
   ],
   "volume": "6 à 8 répétitions par bras",
+  "startInfo": "Place une main sur une chaise stable, buste incliné et dos neutre. Garde les pieds légèrement décalés.",
   "avoid": [
     "Hausser l’épaule",
     "Tordre le tronc",
     "Donner un à-coup"
   ],
+  "contraindications": ["Douleur aiguë à l’épaule ou au dos", "Appui instable"],
+  "notes": ["Commencer par le bras droit puis répéter à gauche."],
   "sequence": [
     "Départ en appui",
     "Tire en 2 secondes",
     "Redescends en 2 secondes",
     "Reviens au départ"
   ],
-  "sideSupport": "unilateral-right-left",
-  "professionalStatus": "pilot-validated",
+  "sideSupport": "right-left",
+  "professionalStatus": {"validated": false, "priority": null, "forbidden": false},
   "ritual": {
     "imageKey": "row",
     "title": "Tirage",
@@ -46,13 +52,13 @@
     }
   },
   "assets": {
-    "hero": "assets/movements/one-arm-row/hero.webp",
-    "sequence": "assets/movements/one-arm-row/sequence.webp",
-    "alternateView": "assets/movements/one-arm-row/back-view.webp",
-    "alternateViewLabel": "Vue de dos — stabilité sans rotation",
-    "heroIncludesAlternateView": true,
+    "heroAnnotated": "assets/movements/one-arm-row/hero-annotated.webp",
+    "heroPlain": null,
+    "heroFullScreen": "assets/movements/one-arm-row/hero-annotated.webp",
+    "sequenceStrip": "assets/movements/one-arm-row/sequence-strip.webp",
+    "posterA4": "assets/posters/v2/tirage-un-bras-appui-a4-v2.webp",
+    "extraViews": [{"id": "back-posture", "label": "Vue de dos — stabilité sans rotation", "role": "posture", "src": "assets/movements/one-arm-row/back-view.webp"}],
     "ritualImage": "assets/images/ritual/row-v043.png",
-    "fullscreenImage": "assets/images/fullscreen/row-v043.png",
     "posterFallback": "assets/posters/v2/tirage-un-bras-appui-a4-v2.webp"
   }
 }

@@ -1,9 +1,12 @@
 {
   "schemaVersion": 1,
   "id": "squat-chair",
+  "slug": "squat-vers-chaise",
   "name": "Squat vers chaise",
+  "shortName": "Squat chaise",
   "posterNumber": 2,
   "category": "Renforcement",
+  "subCategory": "Jambes et autonomie",
   "subtitle": "Jambes, fessiers, autonomie",
   "muscleGroups": ["Jambes", "Fessiers"],
   "equipment": ["Chaise"],
@@ -20,32 +23,35 @@
     {"duration": 2, "action": "MONTER"}
   ],
   "volume": "6 à 8 répétitions",
+  "startInfo": "Place une chaise stable derrière toi. Debout, pieds largeur de hanches, regarde droit devant.",
   "avoid": [
     "Tomber sur la chaise",
     "Arrondir le bas du dos",
     "Laisser les genoux rentrer"
   ],
+  "contraindications": ["Douleur aiguë au genou ou à la hanche", "Chaise instable"],
+  "notes": ["Réduire l’amplitude si nécessaire sans perdre l’alignement."],
   "sequence": [
     "Debout, prépare-toi",
     "Descends en 2 secondes",
     "Touche la chaise",
     "Remonte en 2 secondes"
   ],
-  "sideSupport": "bilateral",
-  "professionalStatus": "pilot-validated",
+  "sideSupport": null,
+  "professionalStatus": {"validated": false, "priority": null, "forbidden": false},
   "ritual": {
     "imageKey": "squat",
     "title": "Squat vers chaise",
     "cue": "Hanches vers l’arrière. Touche la chaise sans t’écraser, puis remonte en poussant dans les talons."
   },
   "assets": {
-    "hero": "assets/movements/squat-chair/hero.webp",
-    "sequence": "assets/movements/squat-chair/sequence.webp",
-    "alternateView": "assets/movements/squat-chair/front-view.webp",
-    "alternateViewLabel": "Vue de face — alignement des genoux",
-    "heroIncludesAlternateView": true,
+    "heroAnnotated": "assets/movements/squat-chair/hero-annotated.webp",
+    "heroPlain": null,
+    "heroFullScreen": "assets/movements/squat-chair/hero-annotated.webp",
+    "sequenceStrip": "assets/movements/squat-chair/sequence-strip.webp",
+    "posterA4": "assets/posters/v2/squat-vers-chaise-a4-v2.webp",
+    "extraViews": [{"id": "front-alignment", "label": "Vue de face — alignement des genoux", "role": "alignment", "src": "assets/movements/squat-chair/front-view.webp"}],
     "ritualImage": "assets/images/ritual/squat-v043.png",
-    "fullscreenImage": "assets/images/fullscreen/squat-v043.png",
     "posterFallback": "assets/posters/v2/squat-vers-chaise-a4-v2.webp"
   }
 }

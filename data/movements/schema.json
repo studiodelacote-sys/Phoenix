@@ -4,17 +4,20 @@
   "title": "PHOENIX Movement",
   "type": "object",
   "required": [
-    "schemaVersion", "id", "name", "category", "muscleGroups",
+    "schemaVersion", "id", "slug", "name", "shortName", "category", "subCategory", "muscleGroups",
     "equipment", "level", "objective", "instructions", "cadence",
-    "volume", "avoid", "sequence", "sideSupport",
+    "volume", "startInfo", "avoid", "contraindications", "sequence", "sideSupport",
     "professionalStatus", "ritual", "assets"
   ],
   "properties": {
     "schemaVersion": {"const": 1},
     "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
     "name": {"type": "string", "minLength": 1},
+    "shortName": {"type": "string", "minLength": 1},
     "posterNumber": {"type": "integer", "minimum": 1},
     "category": {"type": "string"},
+    "subCategory": {"type": "string"},
     "subtitle": {"type": "string"},
     "muscleGroups": {"type": "array", "items": {"type": "string"}, "minItems": 1},
     "equipment": {"type": "array", "items": {"type": "string"}},
@@ -35,22 +38,34 @@
       }
     },
     "volume": {"type": "string"},
+    "startInfo": {"type": "string"},
     "avoid": {"type": "array", "items": {"type": "string"}},
+    "contraindications": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "array", "items": {"type": "string"}},
     "sequence": {"type": "array", "items": {"type": "string"}},
-    "sideSupport": {"enum": ["bilateral", "unilateral-right-left", "none"]},
-    "professionalStatus": {"type": "string"},
+    "sideSupport": {"type": ["string", "null"]},
+    "professionalStatus": {
+      "type": "object",
+      "required": ["validated", "priority", "forbidden"],
+      "properties": {
+        "validated": {"type": "boolean"},
+        "priority": {"type": ["string", "null"]},
+        "forbidden": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
     "ritual": {"type": "object"},
     "assets": {
       "type": "object",
-      "required": ["hero", "sequence", "ritualImage", "fullscreenImage", "posterFallback"],
+      "required": ["heroAnnotated", "heroPlain", "heroFullScreen", "sequenceStrip", "posterA4", "extraViews", "ritualImage"],
       "properties": {
-        "hero": {"type": "string"},
-        "sequence": {"type": "string"},
-        "alternateView": {"type": ["string", "null"]},
-        "alternateViewLabel": {"type": ["string", "null"]},
-        "heroIncludesAlternateView": {"type": "boolean"},
+        "heroAnnotated": {"type": "string"},
+        "heroPlain": {"type": ["string", "null"]},
+        "heroFullScreen": {"type": "string"},
+        "sequenceStrip": {"type": "string"},
+        "posterA4": {"type": "string"},
+        "extraViews": {"type": "array", "items": {"type": "object", "required": ["id", "label", "role", "src"], "properties": {"id": {"type": "string"}, "label": {"type": "string"}, "role": {"type": "string"}, "src": {"type": "string"}}, "additionalProperties": false}},
         "ritualImage": {"type": "string"},
-        "fullscreenImage": {"type": "string"},
         "posterFallback": {"type": "string"}
       }
     }
