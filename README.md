@@ -1,10 +1,14 @@
-# PHOENIX V0.458 — PWA iPhone/iPad
+# PHOENIX V0.459 — PWA iPhone/iPad
 
 PHOENIX est une Progressive Web App autonome, sans framework. La séance dure 15 minutes programmées et fonctionne hors connexion après une première ouverture réussie en ligne.
 
-La V0.458 industrialise les deux mouvements pilotes **Squat vers chaise** et **Tirage un bras avec appui**. Un catalogue JSON unique alimente désormais leurs métadonnées dans le Rituel, leur fiche Library responsive et le gabarit partagé `PhoenixA4Poster`. Les autres mouvements conservent leur architecture historique comme solution de repli.
+## Référence visuelle canonique
 
-Dans **Autres vues → Fiche détaillée**, ces deux mouvements ouvrent automatiquement le composant partagé et préservent l’état du Rituel. Le marqueur visible `MOVEMENT MODEL · V0.458` permet de vérifier la bonne version. Le bouton **VOIR LA FICHE A4** rend le gabarit A4 à partir du même objet mouvement. Les masters V2 restent disponibles comme références visuelles et fallback. Routes directes de test :
+La référence prioritaire de la marque est `assets/brand/phoenix-brand-guideline.png`. Toute évolution de l’UI, de la Library, des affiches A4, des icônes ou des assets doit suivre cette image avant les anciens écrans et posters. Les règles détaillées et l’ordre de priorité sont consignés dans `assets/brand/README.md`.
+
+La V0.459 industrialise les deux mouvements pilotes **Squat vers chaise** et **Tirage un bras avec appui**. Un catalogue JSON unique alimente désormais leurs métadonnées dans le Rituel, leur fiche Library responsive et le gabarit partagé `PhoenixA4Poster`. Les autres mouvements conservent leur architecture historique comme solution de repli.
+
+Dans **Autres vues → Fiche détaillée**, ces deux mouvements ouvrent automatiquement le composant partagé et préservent l’état du Rituel. Le marqueur visible `PHOENIX LIBRARY · V0.459` permet de vérifier la bonne version. Le bouton **VOIR LA FICHE A4** rend le gabarit A4 à partir du même objet mouvement. Les masters V2 restent disponibles comme références visuelles et fallback. Routes directes de test :
 
 - `?library=squat-chair` — Squat vers chaise ;
 - `?library=one-arm-row` — Tirage à un bras ;
@@ -14,9 +18,9 @@ Dans **Autres vues → Fiche détaillée**, ces deux mouvements ouvrent automati
 - `?library=thoracic-opening` — Ouverture thoracique ;
 - `?library=breathing` — Respiration calme.
 
-Les miniatures « Autres vues » réutilisent provisoirement les compositions `ritualImage` existantes. Les futurs assets dédiés pourront remplacer ces sources dans les données sans changer le composant.
+Les vues complémentaires utiles sont déclarées dans `assets.extraViews`; les doublons pédagogiques ne sont pas affichés.
 
-### Architecture pilote V0.458
+### Architecture pilote V0.459
 
 Schéma et données :
 
@@ -29,10 +33,14 @@ Composants partagés :
 
 - `components/RitualExercise.js` hydrate les métadonnées des étapes portant un `movementId` ;
 - `components/LibraryDetail.js` rend la fiche mobile depuis l’objet mouvement ;
-- `components/PhoenixA4Poster.js` rend l’affiche A4 partagée depuis le même objet ;
+- `components/FullscreenExerciseMedia.js` affiche le hero annoté et coordonne la pause/reprise du Rituel ;
+- `components/PhoenixA4Poster.js` génère la fiche A4 depuis la même source JSON.
+
+Les rôles d’images sont explicites : `heroAnnotated`, `heroPlain`, `heroFullScreen`, `sequenceStrip`, `posterA4` et `extraViews`. Les icônes installables 180/192/512 px sont dérivées du maître propre `assets/icons/phoenix-app-icon-master.png`.
+
 - `components/LibraryDetail.css` et `components/PhoenixA4Poster.css` portent leurs styles.
 
-Les champs partagés sont `id`, `name`, `posterNumber`, `category`, `subtitle`, `muscleGroups`, `equipment`, `level`, `objective`, `instructions`, `cadence`, `volume`, `avoid`, `sequence`, `sideSupport`, `professionalStatus`, `ritual` et `assets`.
+Les champs partagés incluent `id`, `slug`, `name`, `shortName`, `category`, `subCategory`, `startInfo`, `objective`, `instructions`, `cadence`, `volume`, `avoid`, `contraindications`, `notes`, `sideSupport`, `professionalStatus`, `ritual` et `assets`.
 
 Les étapes pilotes de `js/app.js` référencent explicitement `movementId`. Le tirage précise également `side: right/left`. Le titre, la consigne et les phases sont injectés depuis le catalogue avant le premier rendu.
 
@@ -43,7 +51,7 @@ Nouveaux masters :
 - `assets/posters/v2/squat-vers-chaise-a4-v2.webp` pour `squat-chair` ;
 - `assets/posters/v2/tirage-un-bras-appui-a4-v2.webp` pour `one-arm-row`.
 
-Les nouveaux assets réutilisables se trouvent dans `assets/movements/squat-chair/` et `assets/movements/one-arm-row/` : `hero.webp`, `sequence.webp` et la vue d’alignement propre au mouvement. Les anciens masters et leurs découpes ne sont ni écrasés ni supprimés.
+Les nouveaux assets réutilisables se trouvent dans `assets/movements/squat-chair/` et `assets/movements/one-arm-row/` : `hero-annotated.webp`, `sequence-strip.webp` et la vue d’alignement propre au mouvement. Les anciens masters et leurs découpes ne sont ni écrasés ni supprimés.
 
 Les routes `?library=squat-chair` et `?library=one-arm-row`, ainsi que les liens **Autres vues → Fiche détaillée** correspondants dans le Rituel, utilisent `components/LibraryDetail.js`. Elles ne génèrent aucune ancienne `.library-card`. Les autres routes continuent à employer le composant historique de `js/app.js`.
 
